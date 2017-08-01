@@ -53,7 +53,7 @@ public class DialogFrag extends AppCompatActivity implements LoaderManager.Loade
     private int priority = 0;
     private int taskStatus = 0;
     public static int year =Calendar.getInstance().get(Calendar.YEAR);
-    public static int month = Calendar.getInstance().get(Calendar.MONTH) + 1;
+    public static int month = Calendar.getInstance().get(Calendar.MONTH) ;
     public static int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     public static int hour = Calendar.getInstance().get(Calendar.HOUR);
     public static int min = Calendar.getInstance().get(Calendar.MINUTE);
@@ -331,7 +331,7 @@ public class DialogFrag extends AppCompatActivity implements LoaderManager.Loade
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
             DialogFrag.year = year;
-            DialogFrag.month = month+1;
+            DialogFrag.month = month;
             DialogFrag.day = day;
         }
     }

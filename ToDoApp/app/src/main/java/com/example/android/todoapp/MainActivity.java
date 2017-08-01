@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements android.app.Loade
 
 
          if(sortOrder == 1){
-            return new CursorLoader(this, TodoListContract.TodoListEntry.CONTENT_URI,projection,null,null, TodoListContract.TodoListEntry.COLUMN_TIMESTAMP + " DESC");
+            return new CursorLoader(this, TodoListContract.TodoListEntry.CONTENT_URI,projection,null,null, TodoListContract.TodoListEntry.COLUMN_TIMESTAMP + " ASC");
         }else if(sortOrder == 2){
             return new CursorLoader(this, TodoListContract.TodoListEntry.CONTENT_URI,projection,null,null, TodoListContract.TodoListEntry.COLUMN_PRIORITY + " DESC");
         }else {
