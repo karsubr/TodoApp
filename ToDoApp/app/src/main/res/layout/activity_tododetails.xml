@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.todoapp.Tododetails">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/detailtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme= "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity = "end">
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editbutton"
+            android:drawableLeft="@drawable/ic_action_edit"
+            android:layout_alignLeft="@id/detailtoolbar"
+            android:layout_alignTop="@id/detailtoolbar"
+            android:layout_marginRight="@dimen/spinnerdimen"
+            android:layout_marginEnd="@dimen/spinnerdimen"
+
+            android:background="@null"/>
+         <ImageButton
+             android:id="@+id/deletebutton"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/ic_delete"
+             android:background="@null"
+             android:layout_gravity="center_vertical"
+             android:layout_marginLeft="16dp"
+             android:layout_marginRight="16dp"/>
+
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_cancel"
+            android:background="@null"
+            android:layout_alignLeft="@id/detailtoolbar"
+            android:layout_alignTop="@id/detailtoolbar"
+            android:layout_gravity = "center_vertical"
+            android:layout_marginRight="@dimen/spinnerdimen"/>
+        </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsizeList"
+                android:textAllCaps="true"
+                android:text="Task name:"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/textnamedetails"
+                android:gravity="right"
+                tools:text="Finish the app"
+                android:textSize="@dimen/textsizeList"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsizeList"
+                android:textAllCaps="true"
+                android:text="Due date: "
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/duedatedetails"
+                android:gravity="right"
+                tools:text="Finish the app"
+                android:textSize="@dimen/textsizeList"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsizeList"
+                android:textAllCaps="true"
+                android:text="Task Notes: "
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/tasknotesdetails"
+                android:gravity="right"
+                tools:text="Finish the app"
+                android:textSize="@dimen/textsizeList"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsizeList"
+                android:textAllCaps="true"
+                android:text="Priority:"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/prioritydetails"
+                android:gravity="right"
+                tools:text="Finish the app"
+                android:textSize="@dimen/textsizeList"
+                android:layout_gravity="center_vertical"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textsizeList"
+                android:textAllCaps="true"
+                android:text="Task Status:"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/taskstatusdetails"
+                android:gravity="right"
+                tools:text="Finish the app"
+                android:textSize="@dimen/textsizeList"
+                android:layout_gravity="center_vertical"
+                />
+
+        </LinearLayout>
+
+
+</LinearLayout>

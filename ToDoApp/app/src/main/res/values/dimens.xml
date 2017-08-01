@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsizeList">16sp</dimen>
+    <dimen name="PaddingText">16dp</dimen>
+    <dimen name="titlemargin">32dp</dimen>
+    <dimen name="leftmargin">8dp</dimen>
+    <dimen name="titletextsiz">16sp</dimen>
+    <dimen name="marginBottom">16dp</dimen>
+    <dimen name="spinnerdimen">10dp</dimen>
+</resources>

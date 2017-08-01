@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#424242">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/edittoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme= "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_button"
+            android:layout_alignLeft="@id/edittoolbar"
+            android:layout_alignTop="@id/edittoolbar"
+            android:layout_marginRight="@dimen/spinnerdimen"
+            android:layout_marginEnd="@dimen/spinnerdimen"
+            android:layout_gravity = "end"
+            android:background="@null"/>
+
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:id="@+id/tasknameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_task_name"
+        android:textAllCaps="true"
+        android:textSize="@dimen/titletextsiz"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/leftmargin"
+        android:layout_marginTop="@dimen/marginBottom"
+        android:layout_marginBottom="@dimen/marginBottom"/>
+
+    <EditText
+        android:id="@+id/taskname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task Name"
+        android:inputType="textVisiblePassword"
+        android:layout_marginLeft="@dimen/leftmargin"
+        android:layout_marginBottom="@dimen/marginBottom"
+        />
+
+        <TextView
+            android:id="@+id/datetitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/due_date"
+            android:textAllCaps="true"
+            android:textSize="@dimen/titletextsiz"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/leftmargin"
+            android:layout_marginBottom="@dimen/marginBottom"/>
+        <Button
+            android:id="@+id/addDateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_date"
+            android:layout_gravity="center_horizontal"
+            />
+        <Button
+            android:id="@+id/addTimeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_time"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/marginBottom"/>
+
+    <TextView
+        android:id="@+id/tasknoteText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/add_task_notes1"
+        android:textAllCaps="true"
+        android:textSize="@dimen/titletextsiz"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/leftmargin"
+        android:layout_marginTop="@dimen/marginBottom"
+        android:layout_marginBottom="@dimen/marginBottom"/>
+
+
+    <EditText
+            android:id="@+id/tasknotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_task_notes"
+            android:inputType="text|textMultiLine"
+            android:layout_marginLeft="@dimen/leftmargin"
+            android:layout_marginBottom="@dimen/marginBottom"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/titlemargin">
+            <TextView
+                android:id="@+id/prioritytext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/priority"
+                android:textAllCaps="true"
+                android:textSize="@dimen/titletextsiz"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/leftmargin"
+                android:layout_marginTop="@dimen/marginBottom"/>
+
+            <Spinner
+                android:id="@+id/priorityspinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/prioritytext"
+                android:layout_alignBottom="@id/prioritytext"
+                android:entries="@array/priorityspinner">
+
+            </Spinner>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/statustext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/task_status"
+                android:textAllCaps="true"
+                android:textSize="@dimen/titletextsiz"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/leftmargin"
+                android:layout_marginTop="@dimen/marginBottom"/>
+
+            <Spinner
+                android:id="@+id/statusspinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/statustext"
+                android:layout_alignBottom="@id/statustext"
+                android:entries="@array/statusArray"/>
+
+
+
+        </RelativeLayout>
+
+
+</LinearLayout>

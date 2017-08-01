@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="add_task">Add task</string>
+    <string name="due_date">Due date</string>
+    <string name="add_task_notes">Add task notes</string>
+    <string name="priority">priority</string>
+    <string name="save_button">save</string>
+    <string name="sortby">Sortby</string>
+    <string name="add_date">Add Date</string>
+    <string name="add_time">Add Time</string>
+    <string name="add_task_name">add task name</string>
+    <string name="add_task_notes1">Add Task Notes</string>
+    <string name="task_status">task status</string>
+    <string name="editbutton">Edit</string>
+    <string-array name="priorityspinner">
+        <item>HIGH</item>
+        <item>MEDIUM</item>
+        <item>LOW</item>
+    </string-array>
+    <string-array name="sorttaskarray">
+        <item>SortBy</item>
+        <item>Date</item>
+        <item>Priority</item>
+    </string-array>
+    <string-array name="statusArray">
+        <item>To-Do</item>
+        <item>Done</item>
+    </string-array>
+</resources>
