@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class TodoListDBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "todolist.db";
-    public static final int DATABASE_VERSION = 2;
+    public static final int DATABASE_VERSION = 3;
     @Override
     public void onCreate(SQLiteDatabase db) {
             final String SQL_CREATE_TODOLIST_TABLE = "CREATE TABLE " + TodoListContract.TodoListEntry.TABLE_NAME+ " (" + TodoListContract.TodoListEntry.ID+ " INTEGER PRIMARY KEY AUTOINCREMENT," + TodoListContract.TodoListEntry.COLUMN_TASK_NAME+ " TEXT NOT NULL, " + TodoListContract.TodoListEntry.COLUMN_PRIORITY + " INTEGER NOT NULL, "+ TodoListContract.TodoListEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "+ TodoListContract.TodoListEntry.COLUMN_TASK_NOTES+ " TEXT DEFAULT NULL, "+ TodoListContract.TodoListEntry.COLUMN_TASKSTATUS + " INTEGER NOT NULL" + "); ";

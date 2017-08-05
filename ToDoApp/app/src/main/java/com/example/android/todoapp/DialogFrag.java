@@ -1,10 +1,14 @@
 package com.example.android.todoapp;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.LoaderManager;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -30,10 +34,12 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.android.todoapp.Services.NotificationBroadcast;
 import com.example.android.todoapp.data.TodoListContract;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by rishw on 7/29/2017.
@@ -156,6 +162,7 @@ public class DialogFrag extends AppCompatActivity implements LoaderManager.Loade
                 }else{
                     updateData();
                 }
+                scheduleNotification(getNotification());
                 Intent intent = new Intent(DialogFrag.this,MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -188,6 +195,32 @@ public class DialogFrag extends AppCompatActivity implements LoaderManager.Loade
         getLoaderManager().initLoader(MainActivity.LOADER_TAG,null,this);
 
 
+    }
+
+    private Notification getNotification() {
+        Notification.Builder builder = new Notification.Builder(this);
+        builder.setContentTitle("Upcoming Task");
+        builder.setContentText(mTaskNameEditView.getText().toString() + "\n" + mTaskNotesEditView.getText().toString());
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setAutoCancel(true);
+        return builder.build();
+
+    }
+
+    private void scheduleNotification(Notification notification) {
+        Intent notificationIntent = new Intent(this, NotificationBroadcast.class);
+        notificationIntent.putExtra(NotificationBroadcast.NOTIFICATION_ID,1);
+        notificationIntent.putExtra(NotificationBroadcast.NOTIFICATION,notification);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, notificationIntent,PendingIntent.FLAG_UPDATE_CURRENT);
+        Calendar calender = Calendar.getInstance();
+        Date date =  getDate(year,month,day);
+        long millis = TimeUnit.MINUTES.toMillis(30);
+        long dateInMillis = date.getTime();
+        long alarminMillis =  dateInMillis - millis;
+        if(calender.getTimeInMillis() < alarminMillis && taskStatus != 1) {
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, alarminMillis, pendingIntent);
+        }
     }
 
     @Override

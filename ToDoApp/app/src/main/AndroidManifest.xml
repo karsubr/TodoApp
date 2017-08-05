@@ -16,17 +16,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DialogFrag"
-            android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".Tododetails"
-            ></activity>
+        <activity
+            android:name=".DialogFrag"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Tododetails" />
+
         <provider
-            android:authorities="com.example.android.todoapp"
             android:name=".data.TodoProviders"
-            android:exported="false"/>
+            android:authorities="com.example.android.todoapp"
+            android:exported="false" />
+
+        <service
+            android:name=".Services.NotificationBroadcast"
+            android:exported="false"></service>
+        <receiver android:name=".Services.NotificationBroadcast" />
     </application>
-
-
-
 
 </manifest>
